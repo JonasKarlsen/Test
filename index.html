@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hello.css">
+</head>
+<body>
+
+    <hei>
+        HEI!
+    </hei>
+
+
+    </style>
+
+
+    <center><h2> Uke 4 - Binære tall og Full Adder; filbehandling og filrettigheter </h2><h4>Oppgaver til mandag 22. - fredag 26. jan</h4></center>
+     <i>
+      I første del av oppgavene skal du lage en simulering som legger sammen to tall på nøyaktig samme måte som det gjøres med fysiske kretser inne i en ekte CPU.
+      
+    <p>Etterpå går vi dypere inn på shell-kommandospråket bash med mange småoppgaver for å 
+    drille inn Linux-kommandoer og noen litt vanskligere for å forstå  
+    katalogstrukturer bedre. 
+    
+    Se linken 'Linux kommando oversikt' under 'Linux hjelp'-linken på kurshjemmesiden om du ikke finner løsningen. Det kan være nyttig å lese 'Nyttige praktiske tips om bruk av Linux ' som også er en link under 'Linux hjelp'-linken.
+    </p>
+    <p>
+    NB! Oppgaven som omtales som <b>ukens skrekk</b> er bare for folk med gode nerver 
+    og som ikke lider av klaustrofobi. Du blir fanget nede i en katalog; en 
+    skjæbne værre enn døden! Tidligere år har mange blitt sittende fast i timesvis; klarer du å bryte deg 
+    ut av fengselet?
+    </p>
+    
+    <p> Alle oppgaver som er merket med <font> <i>(Oblig)</i></font>, skal inngå i rapporten dere skal levere på Canvas som en del av den første obligatoriske innleveringen. Rapporten kan gjerne være kortfattet. Merk hver oppgave med ukenummer og oppgavenummer av typen 4.2 som betyr andre oppgave i uke 4 (denne uken).</p>   
+    
+    
+    </i><ol>
+                      
+    
+    
+    <li> <font color="f04070"> <i>(Oblig)</i></font>  
+    Utfør addisjonen 5 + 5 = 10 med binære tall for hånd ved å bruke den samme addisjonsmetoden som man bruker når man legger 
+    sammen desimaltall med penn og papir. 
+    </li>
+    <li> <font color="f04070"> <i>(Oblig)</i></font>  
+    Se på hva som skjer når man legger sammen to siffer X og Y som står under hverandre i denne algoritmen. Anta at 
+    z er mente fra forrige operasjon til høyre for sifferene vi behandler, sifferet under streken blir S og c blir mente til 
+    neste operasjon, slik det er vist i figuren under:
+    <p>
+     <img src="add.png">
+    </p>
+    Sett på grunnlag av dette opp en sannhetstabell som viser hva output S og c må bli for alle verdier av X, Y og z.
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+      <p>Hva blir den boolske funksjonen F som funksjon av A og B i figuren under? Skriv ned det boolske uttrykket. </p>
+      <img src="ab.png">
+    </li>
+    <li> <font color="f04070"> <i>(Oblig)</i></font> 
+      <p>Forenkle det boolske  uttrykket for F i forrige oppgave så mye som mulig. </p>
+    </li>
+    <li> <font color="f04070"> <i>(Oblig)</i></font>  
+      Last ned makroen
+    <a href="https://os.cs.oslomet.no/os/digital/FullAdder.dwm" target="_top">
+    FullAdder.dwm</a>
+    og vis at den oppfyller sannhetstabellen du satte opp i forrige oppgave. 
+    Velg File - New Macro, klikk på Embed Macro-ikonet i menyen, klikk midt på siden og velg så FullAdder.dwm. Koble til 
+    Interactive Input til X, Y og z og LED til S og c. (klikk på LED-ikonet og plasser det, trekk deretter opp en tråd mellom S og 
+    LED med hjelp av Wiring Tool helt til høyre i menyen). Verifiser deretter at sannhetstabellen blir riktig.
+    
+    </li>
+    <li> 
+    <b>Ukens utfordring!</b>
+    Sett sammen tre slike FullAdder-makroer til en krets som du kan bruke til å utføre summen 3+7=10.  
+    </li>
+    <li> 
+    Tegn en krets med AND, OR og NOT-porter som gir funksjonen F = A + A · B.
+    </li>
+    <li>
+    Hva er path? Finn ut hva som er full path til programmet som startes når du gir kommandoen <tt>diff</tt> 
+     og les manualsiden for denne kommandoen. 
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    Gå til katalogen <tt>/usr/bin</tt> ved å bruke absolutt path.
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    Gå til hjemmekatlogen din. Gå deretter til katalogen <tt>/usr/bin</tt> ved å bruke relativ path.
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font>  
+    Lag to filer med følgende innhold
+    <pre>haugerud@data2500:~$ cat fa.txt 
+    1a
+    2a
+    3a
+    4a
+    5a
+    haugerud@data2500:~$ cat fb.txt 
+    1a
+    2a
+    3a
+    4b
+    5a
+    </pre>
+    og kjør kommandoen 
+    <pre>haugerud@data2500:~$ diff fa.txt fb.txt  
+    </pre>
+    Forklar hvordan innholdet av det du får fra kommandoen <tt>diff</tt> viser forskjellen på filene.
+    </li><li>
+    Lag en katalog med navn 'test' i oblig1-katalogen du lagde i forrige uke. 
+    Kopier deretter katlogen oblig1 med alle filer og underkataloger til 
+    katalogen oblig2 (oblig2 skal ikke eksistere fra før). Sjekk at alt ble 
+    kopiert til den nye katalogen oblig2. Hva skjer om 
+    du utfører kopieringen av oblig1 til oblig2 en gang til (med samme kommando)?
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    Utfør følgende Linux-kommandoer i en tom mappe: 
+    <pre>mkdir tex
+    mkdir oblig
+    mv oblig tex
+    mkdir oblig
+    mv tex oblig
+    </pre>
+    Bruk kommandoen <tt>tree</tt> eller tegn en liten skisse som viser katalogstrukturen i den tidligere tomme katalogen, 
+    med navn på alle katalogene etterat disse kommandoene er utført og prøv å forstå hva som skjedde. 
+    </li><li>
+    Gå til roten (/) av systemet. Finn minst tre forskjellige måter
+    å gå tilbake til hjemmektalogen din på.
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    Skriv kommandoen <tt>echo bla bla bla &gt; newfile</tt>, og bruk
+    <tt>more</tt>
+    for å se på filens innhold. Kan du forklare hva som har skjedd?
+    Dette kalles redirection. 
+    </li><li>
+    Editer filen <tt>.bashrc</tt> i din hjemmekatalog slik at neste gang du starter et shell blir rm en alias
+    til rm -i (alias er en såkalt shell builtin kommando(prøv <tt>type alias</tt>) og disse 
+    har ikke egen alias men er omtalt i manualsiden for bash. Enklere enn å bla i denne 
+    store manualsiden er det å prøve <tt>help alias</tt> kommandoen)
+    og bash-promptet endret fra deafult formen "[brukernavn]@host$ " til
+    "OS-navn:hostname$". Lag filen med <tt> $ jed ~/.bashrc </tt> om du ikke har den fra 
+    før og skriv inn kommandoer. Disse kommandoene vil utføres hver gang du starter et nytt 
+    shell (hint: finn ut hvordan promptet settes i /etc/profile; let 
+    etter PS1. Søk eventuelt på web med søkeord 'bashrc' og 'prompt' for å finne alle muligheter).
+    </li><li>
+    Man-siden til en kommando inneholder ofte enormt mye informasjon. Da kan det være greit å lære seg å navigere siden litt bedre enn bare pil opp/ned. Her er noen triks du burde prøve:
+    Søke etter tekst: Skriv "/", legg merke til at du nede i venstre hjørne kan skrive hvilken tekst du leter etter. Trykk enter for å hoppe til første forekomst. Trykk "n" for å hoppe til neste forekomst.
+    </li><li> 
+    Søk vil bare lete nedover i teksten. Derfor kan det være greit å hoppe til start/slutt. Prøv "g" og "G".
+    
+    <p><b>Forbedre verktøyet fra forrige uke: </b>
+    Scriptet som vi laget i forrige ukesoppgave hadde noen feil som kan forbedres.
+    </p><ul>
+    <li>grep hentet ut alle linjer hvor brukernavnet forekom, noe som kunne gi flere linjer enn nødvendig</li>
+    <li>Scriptet skrev bare ut antall linjer en enkelt gang, vi kunne tenke oss å bruke det til å overvåke en bruker i en lengre periode, slik som med kommandoen top.</li>
+    </ul>
+    <p></p>
+    <p>
+    De neste oppgavene skal handle om å fikse feilene vi gjorde i
+    scriptet vi lagde i forrige uke.
+    For det første må vi fortelle kommandoen grep at den bare skal sjekke brukernavnet mot det aller første ordet i hver linje fra "ps aux". </p>
+    
+    </li><li> 
+    Begrunn hvorfor vi skal matche det første ordet i hver linje fra
+    "ps aux" og ikke hele linjen
+    </li><li> Se i man-siden til grep om "REGULAR EXPRESSIONS" (husk tidligere oppgave om å navigere i man-sider). Se spesielt på 8. avsnitt i det kapittelet. Hva sier det avsnittet om hvordan begynnelsen og slutten av en linje kan bli repressentert i grep?
+    </li><li> Prøv å kjøre "ps aux | grep ..." manuelt og se om du kan matche et brukernavn når det står helt i starten av en linje.
+    </li><li> Bruk det du har lært til å modifisere scriptet ditt.
+    </li><li> Komandoen "watch" kan brukes for å kjøre en annen kommando om og om igjen. Ta en titt på den korte man-siden til watch og vis hvordan man kan kjøre scriptet ditt ved hjelp av watch til å oppdatere seg hvert 10. sekund.
+    
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    Lag først en fil <tt>hemmelig.txt</tt>. Utfør en Linux-kommando som setter filrettighetene 
+    for filen <tt>hemmelig.txt</tt> slik at eieren av filen (du) kun kan lese den, mens alle andre ikke har noen 
+    rettigheter.
+    </li><li>
+    Lag først en fil <tt>fil.txt</tt>. Utfør en Linux-kommando som setter filrettighetene 
+    for filen <tt>fil.txt</tt> slik at eieren av filen (du) har
+    alle rettigheter, medlemmer av filens gruppe har alle rettigheter untatt å skrive til filen, og alle andre kun
+    kan lese den. 
+    </li><li>
+    Logg inn på <tt>data2500</tt>. 
+    Mappen www finnes ikke fra før, så lag først mappen med noen undermapper og filer. 
+    Endre rettighetene til katalogen <tt>www</tt> øverst på ditt hjemmeområde og til alle dens filer og
+    underkataloger, slik at du har alle rettigheter mens gruppen og alle andre kun kan lese og kjøre filer under <tt>www</tt>.
+    </li><li>
+    Hva blir rettighetene til en ny fil du lager med touch? Blir rettighetene de samme om du bruker en 
+    editor til å lage en ny fil? Bruk kommandoen umask til å sørge for at nye filer som lages kun kan 
+    leses og skrives til av eieren, mens alle andre ikke får noen rettigheter.
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    <b>Ukens skrekk!</b><br><br>
+    Denne oppgaven er litt skummel og anbefales ikke å gjøres 
+    alene i mørke vinterkvelder..... Utfør følgende kommandoer 
+    på din konto på data2500: 
+    <pre>$ cd
+    $ mkdir fengsel
+    $ cd fengsel
+    $ chmod 055 ..
+    $ chmod 055 .
+    $ ls
+    $ cd ..
+    $ cd
+    </pre>
+    Hjelp! Hvordan kommer du deg ut av dette? 
+    <pre>$ chmod 755 .
+    $ chmod 755 ..
+    </pre>
+    fikser vel biffen, eller? Mist ikke motet!
+    Noen alternativer:
+    <ul>
+    <li>Prøv å logge inn med putty eller ssh på nytt</li>
+    <li>Tenk....</li>
+    <li>Legg 500 kroner i brukte sedler under døra til rom rom D421 i P52 (det står Haugerud på døren) i en 
+    konvolutt med gruppenummeret ditt på og håp på det beste</li>
+    </ul>
+    <p>Forklar kort hva som skjedde og hvorfor du ble fengslet, når du har kommet ut igjen.
+    </p>
+    </li><li>
+    <b> Ukens nøtt nr. 1:</b><br><br>
+    Start <tt>jed</tt> og lagre en fil med navn <tt>#fil.txt</tt>. 
+    Gå ut av <tt>jed</tt> og prøv å fjerne filen. 
+    Hva tror du problemet skyldes? Hvordan kan du fjerne den fra kommandolinjen?
+    </li><li> 
+    <b>Ukens nøtt nr. 2:</b>
+    Prøv kommandoen 
+    <pre>seq 5 10
+    </pre> 
+    og finn ut hva den gjør. 
+    Lag følgende shell-script og prøv å forstå hva det gjør:
+    <pre>#! /bin/bash
+    
+    for i in $(seq 5 10)
+    do
+       echo "Nr $i"
+    done
+    </pre>
+    Prøv kommandoen 
+    <pre>ping -c 1 -w 1 10.196.10.11 | grep icmp
+    </pre> 
+    og finn ut hva den gjør. Se <tt>man ping</tt>.
+    Bruk det du har lært i denne oppgaven til å lage et script som sender ping til 
+    alle IP'er mellom 10.196.10.11 og  10.196.10.20 og skriver ut en linje fra alle som svarer. 
+    Hvordan teller du antall som svarer?
+    </li><li>
+    <b>Ukens harde nøtt:</b>
+    Kommandoen <tt>type</tt> viser i hvilket directory en kommando ligger.
+    <tt>type</tt> søker i alle directories i <tt>$PATH</tt> variabelen
+    men slutter å søke når den finner en fil som matcher.
+    Lag en bedre kommando <tt>alltype</tt> som skriver ut alle kommandoene med et visst navn
+    - ikke bare den første dersom det finnes flere kommandoer med samme
+    navn. 
+    
+    Hint: 
+    <tt>IFS=:</tt> gjør at <tt>for</tt> splitter opp <tt>$PATH</tt> etter hvert kolon og 
+    ikke mellomrom som er default. <tt>$PATH</tt> angir alle katalogene som et shell leter 
+    i når det skal utføre
+    en kommando.  Testen <tt>if [ -x $fil ] ; then </tt>slår til om $fil er kjørbar.  
+    Hint: I bash refererer variabelen $1 til første argument
+    som blir gitt til et script.
+    Kall følgende script <tt>arg.bash</tt>:
+    <pre>#!/bin/bash
+    
+    echo $1
+    </pre>
+    og kjør det med <tt>$ arg.bash argument</tt>.
+    </li><li>
+    <b>Ukens hardeste nøtt:</b>
+    Innen Linux er det forskjell på store og små bokstaver. Utvid
+    scriptet i den forrige oppgaven til å matche filer med både
+    store og små bokstaver og kall det anytype. F.eks. skal <tt>anytype mail</tt> finne <tt>mail</tt>,
+    <tt>Mail</tt>, eventuelt <tt>MAIL</tt> og også <tt>rmail</tt>, <tt>kmail</tt>, 
+    <tt>sendmail</tt> etc.
+    Hint: bruk echo til å vise alle kommandoer og bruk <tt>grep -i</tt>
+    for å filtrerer bort alt unntatt 'mail'.
+    </li><li> <font color="f04070"> <i>(Oblig)</i></font> 
+    Gjør først et forsøk selv på ukens harde og hardeste nøtt og gjør så et forsøk med ChatGPT (https://ki-chat.sikt.no/) ved å kopiere og paste inn 
+    oppgaveteksten. Sjekk at løsningen ChatGPT gir faktisk virker i praksis. Vurder om du lærte noe av denne måten å gjøre oppgaven på. 
+    Ville et Google-søk gjort samme nytten?
+    <i> Husk at til eksamen så vil hverken ChatGPT eller Google være tilgjengelig. Men du vil få tilgang til et Linux shell 
+    der du kan kjøre kommandoer og script i Inspera. </i>
+    
+    </li></ol>
+     </body>
+
+
+
+</html>
